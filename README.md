@@ -1,3 +1,13 @@
+## wbdv-sp21-01-harrisonjwong-client-react
+
+---
+
+CS 5610 SP21 with Prof Jose Annunziato
+
+Contains assignment 3: https://docs.google.com/document/d/1DypA2bwOU5zpF2jZbqx5GCsfe06kef2_iNvlnah7g7E/edit
+
+
+<!---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +78,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+--->
