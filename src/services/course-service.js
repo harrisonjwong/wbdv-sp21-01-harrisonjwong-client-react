@@ -39,3 +39,13 @@ const deleteCourse = (id) => {
         method: 'DELETE'
     }).then(response => response.json());
 }
+
+const api = {
+    createCourse,
+    findAllCourses,
+    findCourseById,
+    updateCourse,
+    deleteCourse
+}
+
+export default api;
