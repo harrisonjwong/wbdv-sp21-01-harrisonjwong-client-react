@@ -50,3 +50,16 @@
 .wbdv-tabs-bar, .wbdv-pills-bar, .wbdv-widgets {
   margin-top: 15px
 }
+
+.wbdv-link-white {
+  color: white;
+}
+
+.wbdv-link-white:hover {
+  color: white;
+}
+
+.wbdv-add-item {
+  color: #007bff;
+}
+
