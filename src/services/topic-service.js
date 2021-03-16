@@ -1,5 +1,5 @@
 const LESSONS_URL = 'https://wbdv-generic-server.herokuapp.com/api/hwong/lessons';
-const TOPICS_URL = 'https://wbdv-generic-server.herokuapp.com/api/hwong/topicss';
+const TOPICS_URL = 'https://wbdv-generic-server.herokuapp.com/api/hwong/topics';
 
 const createTopic = (lessonId, topic) =>
   fetch(`${LESSONS_URL}/${lessonId}/topics`, {
