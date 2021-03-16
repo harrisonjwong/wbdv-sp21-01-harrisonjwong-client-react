@@ -8,6 +8,8 @@ Contains assignment 3: https://docs.google.com/document/d/1DypA2bwOU5zpF2jZbqx5G
 
 Contains assignment 4: https://docs.google.com/document/d/1EYPKqYPO9recHVcQuRPeiHKebJNT7WotGVyk8YTD6RY/edit#
 
+Contains assignment 5: https://docs.google.com/document/d/1_RDMRAsIR-6MY_xzbZ6HACRW98vat6j2sZmgym3MinU/edit#
+
 <!---
 # Getting Started with Create React App
 
