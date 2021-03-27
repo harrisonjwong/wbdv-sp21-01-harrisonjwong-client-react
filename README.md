@@ -10,6 +10,8 @@ Contains assignment 4: https://docs.google.com/document/d/1EYPKqYPO9recHVcQuRPei
 
 Contains assignment 5: https://docs.google.com/document/d/1_RDMRAsIR-6MY_xzbZ6HACRW98vat6j2sZmgym3MinU/edit#
 
+Contains assignment 6: https://docs.google.com/document/d/1aAmLYNEpmG9cGPqge6CzRani3TJY9pel52Ds1NKqM0Y/edit#
+
 <!---
 # Getting Started with Create React App
 
