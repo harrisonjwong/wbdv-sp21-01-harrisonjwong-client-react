@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import HeadingWidget from './heading-widget';
 import ParagraphWidget from './paragraph-widget';
 import {useParams} from 'react-router-dom';
+import ImageWidget from './image-widget';
+import ListWidget from './list-widget';
 
 const WidgetList = (
   {
@@ -45,7 +47,6 @@ const WidgetList = (
   }
 
   return (
-
     <div>
       <i className='fas fa-plus fa-2x wbdv-clickable wbdv-add-item float-right'
          onClick={() => createWidget(topicId)}
@@ -76,6 +77,8 @@ const WidgetList = (
                             onChangeType(widget, e.target.value)}>
                     <option value='PARAGRAPH'>Paragraph</option>
                     <option value='HEADING'>Heading</option>
+                    <option value='LIST'>List</option>
+                    <option value='IMAGE'>Image</option>
                   </select>
               }
               {
@@ -87,6 +90,18 @@ const WidgetList = (
               {
                 widget.type === 'PARAGRAPH' &&
                 <ParagraphWidget widget={widget}
+                                 editing={editing}
+                                 setEditing={setEditing}/>
+              }
+              {
+                widget.type === 'IMAGE' &&
+                <ImageWidget widget={widget}
+                                 editing={editing}
+                                 setEditing={setEditing}/>
+              }
+              {
+                widget.type === 'LIST' &&
+                <ListWidget widget={widget}
                                  editing={editing}
                                  setEditing={setEditing}/>
               }
@@ -104,8 +119,16 @@ const stpm = (state) => ({
 
 const dtpm = (dispatch) => ({
   createWidget: (topicId) => {
-    widgetService.createWidget(topicId,
-      {type: 'HEADING', size: 1, text: 'New Widget'})
+    const defaultWidget = {
+      type: 'HEADING',
+      size: 1,
+      text: 'New Widget',
+      height: 0,
+      width: 0,
+      url: '',
+      value: 'UNORDERED'
+    }
+    widgetService.createWidget(topicId, defaultWidget)
       .then(widgetFromServer => dispatch({
         type: 'CREATE_WIDGET',
         widget: widgetFromServer
