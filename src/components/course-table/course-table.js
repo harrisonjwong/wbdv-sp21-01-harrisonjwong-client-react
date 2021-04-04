@@ -14,6 +14,7 @@ export default class CourseTable extends React.Component {
             <th>Course Name</th>
             <th className='d-none d-md-table-cell'>Owned By</th>
             <th className='d-none d-lg-table-cell'>Last Modified</th>
+            <th>Quizzes</th>
             <th>
               <div className='float-right'>
                 <i className='fas fa-folder fa-2x mr-2'/>
