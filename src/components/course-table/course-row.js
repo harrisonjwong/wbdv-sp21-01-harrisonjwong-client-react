@@ -36,6 +36,9 @@ export default class CourseRow extends React.Component {
         </td>
         <td className='d-none d-md-table-cell'>{this.props.course.owner}</td>
         <td className='d-none d-lg-table-cell'>{this.props.course.modified}</td>
+        <td>
+          <Link to={`/courses/${this.props.course._id}/quizzes`}>Quizzes</Link>
+        </td>
         <td className='text-right'>
           {
             this.state.editing &&
