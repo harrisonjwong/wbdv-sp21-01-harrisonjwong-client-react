@@ -18,7 +18,9 @@ const Quizzes = () => {
       <ul className='list-group'>
         {
           quizzes.map(quiz => <li className='list-group-item' key={quiz._id}>
-            <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>{quiz.title}</Link>
+            <Link className='col-10' to={`/courses/${courseId}/quizzes/${quiz._id}`}>{quiz.title}</Link>
+            <Link className='btn btn-secondary float-right ml-1'
+                  to={`/courses/${courseId}/quizzes/${quiz._id}/results`}>Results</Link>
             <Link to={`/courses/${courseId}/quizzes/${quiz._id}`} className='float-right btn btn-primary'>Start</Link>
           </li>)
         }
