@@ -7,6 +7,7 @@ import CourseEditor from './course-editor/course-editor';
 import Navbar from './navbar';
 import Quizzes from './quizzes/quizzes';
 import Quiz from './quizzes/quiz';
+import QuizResults from './quizzes/quiz-results';
 
 export default class CourseManager extends React.Component {
   state = {
@@ -98,6 +99,9 @@ export default class CourseManager extends React.Component {
         </Route>
         <Route path='/courses/:courseId/quizzes/:quizId' exact={true}>
           <Quiz/>
+        </Route>
+        <Route path='/courses/:courseId/quizzes/:quizId/results' exact={true}>
+          <QuizResults/>
         </Route>
       </div>
     );
