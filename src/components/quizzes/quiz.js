@@ -8,12 +8,18 @@ const Quiz = () => {
   const {courseId, quizId} = useParams();
   const [questions, setQuestions] = useState([]);
   const [quiz, setQuiz] = useState({});
+  const [graded, setGraded] = useState(false)
+  const [results, setResults] = useState({})
   useEffect(() => {
     QuestionService.findQuestionsForQuiz(quizId)
       .then(res => setQuestions(res));
     QuizService.findQuizById(quizId)
       .then(res => setQuiz(res));
-  }, [quizId])
+    if (graded) {
+      QuizService.submitQuiz(quiz._id, questions).then(res => setResults(res));
+    }
+    //eslint-disable-next-line
+  }, [quizId, graded])
   return (
     <div className='container-fluid'>
       <div className='row'>
@@ -23,10 +29,30 @@ const Quiz = () => {
         {
           questions.map(question =>
           <div key={question._id}>
-            <Question question={question}/>
+            <Question question={question}
+                      questions={questions}
+                      setQuestions={setQuestions}
+                      graded={graded}/>
           </div>
           )
         }
+        <div>
+          <button onClick={() => setGraded(true)}
+                      className='btn btn-success'
+                      disabled={graded}>
+                Grade
+          </button>
+          {
+            graded &&
+            <div>
+              <p>
+                Your submission ID is: {results._id}
+              </p>
+              <Link className='btn btn-secondary'
+                            to={`/courses/${courseId}/quizzes/${quizId}/results`}>See Results</Link>
+            </div>
+          }
+        </div>
     </div>
 
   )
