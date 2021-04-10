@@ -1,11 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
-const MultipleChoiceQuestion = ({question}) => {
+const MultipleChoiceQuestion = ({question, questions, setQuestions, graded}) => {
   const [answer, setAnswer] = useState('');
-  const [graded, setGraded] = useState(false);
   const choices = question.choices;
   const correctAnswer = graded && answer === question.correct;
   const incorrectAnswer = graded && answer !== question.correct;
+  useEffect(() => {
+    if (graded) {
+      const foundQuestion = questions.find(q => q._id === question._id);
+      const restOfQuestions = questions.filter(q => q._id !== question._id);
+      foundQuestion.answer = answer;
+      const newQuestions = [...restOfQuestions, foundQuestion];
+      setQuestions(newQuestions);
+    }
+    //eslint-disable-next-line
+  }, [graded])
   return (
     <div className='p-4 border rounded'>
       <h4>{question.question}
@@ -39,15 +48,6 @@ const MultipleChoiceQuestion = ({question}) => {
       </ul>
       <div className='mt-3 mb-3'>
         Your Answer: {answer}
-      </div>
-      <div className='row'>
-        <div className='col-2'>
-          <button onClick={() => setGraded(true)}
-                  className='btn btn-success'
-                  disabled={graded}>
-            Grade
-          </button>
-        </div>
       </div>
     </div>
   );
