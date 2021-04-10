@@ -1,9 +1,12 @@
 import React from 'react';
 import MultipleChoiceQuestion from './multiple-choice-question';
 
-const TrueFalseQuestion = ({question}) => {
+const TrueFalseQuestion = ({question, questions, setQuestions, graded}) => {
   return (
-    <MultipleChoiceQuestion question={{...question, choices: ['true', 'false']}}/>
+    <MultipleChoiceQuestion question={{...question, choices: ['true', 'false']}}
+                            questions={questions}
+                            setQuestions={setQuestions}
+                            graded={graded}/>
     // NOTE TO GRADER: I was able to implement the True False component by reusing the Multiple Choice component
     // However, I've left the old code I used for the True False Component here in case you want to see it.
   // const [answer, setAnswer] = useState('');
