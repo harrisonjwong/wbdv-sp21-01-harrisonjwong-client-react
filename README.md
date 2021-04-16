@@ -14,6 +14,8 @@ Contains assignment 6: https://docs.google.com/document/d/1aAmLYNEpmG9cGPqge6CzR
 
 Contains assignment 7: https://docs.google.com/document/d/1g9epgAkqxkImhgqHTpPncVMVQVwOiDiE8zqAIgu5uJo/edit#
 
+Contains assignment 8: https://docs.google.com/document/d/1Uhmzth6_ahPFjeR0Skbe437JStGzmiOnTFOHw4gygvU/edit#
+
 <!---
 # Getting Started with Create React App
 
